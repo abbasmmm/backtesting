@@ -1,0 +1,26 @@
+<div>
+  <h2 style="float:left">Run Model</h2>
+  <button style="float:right" class="btn btn-primary" (click)="runModel()">Run</button>
+</div>
+
+<div style="clear:both">  
+  <div *ngFor="let node of nodes" class="node-logs" [class.max]="node.max" [class.gold]="node.isCoord">
+    <div>
+      <div class="circle" [class.blink]="!node.isCompleted && node.queueDepth"></div>
+      <div class="node-title">{{(node.isCoord?'Master Node':'Worker Node/Slave')}}</div>
+    </div>
+    <div class="node-body">
+      <div>Name : <b>{{node.name}}</b></div>
+      <div *ngIf="node.isCoord">Workers Connected : <b>{{workerCount}}</b></div>
+      <div *ngIf="!node.isCoord">No.Of Threads : <b>{{node.numOfThreads}}</b></div>
+      <div>Current Queue Depth : <b>{{node.queueDepth}}</b></div>
+      <div>Records Processed : <b>{{node.recordsProcessed}}</b></div>
+      <div class="log">
+        <div *ngFor="let l of logs(node.name)">{{l}}</div>
+      </div>
+      <button style="position:absolute;bottom:10px;right:10px;background-color:gray;color:white" (click)="node.max=!node.max">{{(node.max?"Minimize":"Maximize")}}</button>
+    </div>
+  </div>
+</div>
+
+

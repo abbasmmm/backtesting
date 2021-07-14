@@ -1,0 +1,35 @@
+<h1 id="tableLabel">Models</h1>
+
+<div class="models">
+  <table>
+    <tr>
+      <td style="width:200px">
+        Model
+      </td>
+      <td>
+        <select style="min-width:250px" [(ngModel)]="selected" (ngModelChange)="onChange($event)">
+          <option value=""></option>
+          <option *ngFor="let m of models" [value]="m.id">{{m.name}}</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Model Id</td>
+      <td>{{selected.id}}</td>
+    </tr>
+    <tr>
+      <td>Model Name</td>
+      <td><input type="text" [(ngModel)]="selected.name" /></td>
+    </tr>
+    <tr>
+      <td>Import Statements</td>
+      <td><textarea style="height:60px" [(ngModel)]="selected.imports" ></textarea></td>
+    </tr>
+    <tr>
+      <td>Model Code</td>
+      <td><textarea [(ngModel)]="selected.code" ></textarea></td>
+    </tr>
+  </table>
+
+  <button class="btn btn-primary" (click)="save()">Save</button>
+</div>

@@ -1,0 +1,72 @@
+.node-logs {
+  height: 300px;
+  width: 250px;
+  float: left;
+  background-color: black;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 10px;
+  position: relative
+}
+
+.node-title {
+  font-size: 13px;
+  font-weight: bold;
+  float: right;
+  margin-left: 20px;
+}
+
+.gold {
+  color: gold;
+}
+
+.circle {
+  width: 15px;
+  height: 15px;
+  background-color: #0d9ef9;
+  border-radius: 50%;
+  float: left;
+}
+
+.blink {
+  background-color: #219005;
+  animation: blink 500ms linear infinite;
+}
+
+.node-body {
+  clear: both;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.max {
+  position: fixed;
+  z-index: 999;
+  left: 5%;
+  width: 90% !important;
+  height: 90%;
+  top: 5%;
+}
+
+.log {
+  overflow: auto;
+  position: absolute;
+  bottom: 20px;
+  top: 120px;
+}
+
+@keyframes blink {
+  0% {
+    opacity: .65;
+  }
+
+  50% {
+    opacity: .85;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

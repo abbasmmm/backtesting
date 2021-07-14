@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "model-processor": {
+      "commandName": "Project",
+      "commandLineArgs": "name Node1 threads 1"
+    }
+  }
+}
